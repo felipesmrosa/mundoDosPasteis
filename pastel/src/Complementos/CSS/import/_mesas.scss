@@ -1,0 +1,140 @@
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  button#FecharModal {
+    background-color: $vermelho;
+    padding: 8px 14px;
+  }
+
+  &__content {
+    background: $branco;
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: 450px;
+    max-width: 100%;
+    font-size: 20px;
+    position: relative;
+    top: -50px;
+    
+    @media (min-width: 1920px) {
+      top: -50px;
+      width: 650px;
+    }
+
+    &__selectForm {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 4px;
+
+      select {
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid $cinza;
+        font-size: 18px;
+        border-radius: 6px;
+        outline: none;
+        margin-bottom: 1.5rem;
+        padding: 6px;
+      }
+    }
+
+    &__sabores {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+
+      &__titulo {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      &__lista {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 3px;
+        margin-bottom: 1.5rem;
+        height: auto;
+        max-height: 450px;
+        overflow-y: scroll;
+      }
+
+      @media (max-width: 1024px) {
+        &__lista {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 14px;
+          padding: 3px;
+          margin-bottom: 1.5rem;
+          height: auto;
+          max-height: 110px;
+          overflow-y: scroll;
+        }
+
+      }
+
+      &__sabor {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 18px;
+
+        &--input {
+          transform: scale(1.5);
+          cursor: pointer;
+        }
+      }
+    }
+
+    &--button {
+      background-color: $amarelo;
+      width: 100%;
+      border: 1px solid $cinza;
+      border-radius: 28px;
+      padding: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+
+.pedido-modal button {
+  background: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pedido-modal button:hover {
+  background: #0056b3;
+}
+
+.pedido-modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.pedido-modal .close:hover {
+  background: darkred;
+}

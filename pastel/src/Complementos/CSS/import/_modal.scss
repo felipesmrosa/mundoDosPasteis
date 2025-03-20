@@ -1,0 +1,93 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: $branco;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 32px;
+  }
+}
+
+.select--modal {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+
+  select {
+    width: 100%;
+    border: 1px solid $cinza;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 8px 0px 8px 8px;
+  }
+
+  select#aluno {
+    margin-bottom: 20px;
+  }
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.confirm-button {
+  background: $verde;
+  color: $branco;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background: $vermelho;
+  color: $branco;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.excel-button {
+  background: $verde;
+  color: $branco;
+  padding: 4px 4px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pdf-button {
+  background: $verde;
+  color: $branco;
+  border: none;
+  padding: 4px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.close-button {
+  background: $vermelho;
+  color: $branco;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}

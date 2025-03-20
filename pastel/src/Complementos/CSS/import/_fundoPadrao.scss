@@ -1,0 +1,499 @@
+.fundoPadrao {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+
+  &__carregarMais {
+    width: 100%;
+    height: 2.5rem;
+    background: $amarelo;
+    border-radius: 28px;
+    border: none;
+    font-size: 16px;
+    color: $cinza;
+    text-transform: uppercase;
+  }
+
+  .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 0px 22px 0px;
+    width: 100%;
+    font-size: 24px;
+
+    &__tituloEIcone {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    &__botao {
+      background: $amarelo;
+      border: none;
+      border-radius: 28px;
+      padding: 12px 24px;
+      font-size: 18px;
+    }
+  }
+
+  .loading {
+    text-align: center;
+    padding: 20px;
+    font-size: 48px;
+    color: $cinza;
+  }
+
+  .cardPadrao {
+    width: 100%;
+
+    div#mensalidade {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+    }
+
+    &__card {
+      border-radius: 6px;
+      border: 1px solid $borda-card;
+      padding: 20px;
+      margin: 8px 0;
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+
+      &__marcarComoPago {
+        background-color: transparent;
+        border: none;
+
+        svg {
+          color: $verde;
+        }
+      }
+
+      &__acoes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 26px;
+        font-size: 20px;
+        position: absolute;
+        right: 12px;
+        bottom: 8px;
+        cursor: pointer;
+
+        &__spanEdit {
+          color: $azul;
+          font-weight: bold;
+
+          p {}
+
+          &::after {
+            content: "EDITAR";
+            display: inline-block;
+            /* Garante que o conteúdo seja exibido */
+            font-size: 12px;
+            margin-left: 5px;
+            /* Adiciona um espaço à direita, se necessário */
+          }
+
+          @media (max-width: 1024px) {
+
+            /* Remove o conteúdo "editar" em telas menores que 1024px */
+            &::after {
+              content: "";
+            }
+          }
+
+          &--edit {
+            color: $azul;
+            position: relative;
+          }
+        }
+
+        &__spanDel {
+          color: $vermelho;
+          font-weight: bold;
+
+          &::after {
+            content: "DELETAR";
+            display: inline-block;
+            font-size: 12px;
+            /* Garante que o conteúdo seja exibido */
+            margin-left: 5px;
+            /* Adiciona um espaço à direita, se necessário */
+          }
+
+          @media (max-width: 1024px) {
+
+            /* Remove o conteúdo "editar" em telas menores que 1024px */
+            &::after {
+              content: "";
+            }
+          }
+
+          &--del {
+            color: $vermelho;
+            position: relative;
+          }
+        }
+
+        &--del {}
+      }
+
+
+
+      &__informacaoPrincipal {
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+
+      &__informacaoAdicional {
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: capitalize;
+
+        svg {
+          color: $verde;
+        }
+      }
+
+      &__formulario {
+        width: 100%;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+
+        &--titulo {
+          width: 100%;
+          font-size: 20px;
+          font-weight: 600;
+          text-transform: uppercase;
+          border-bottom: 1px solid $cinza;
+          padding-bottom: 12px;
+
+          p {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+
+          &--adicionar {
+            background: $amarelo;
+            border: none;
+            border-radius: 28px;
+            padding: 6px 16px;
+            font-size: 14px;
+            color: $cinza;
+            text-transform: uppercase;
+          }
+        }
+
+        #separacao {
+          margin-top: 16px;
+        }
+
+        &__input {
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          flex-direction: column;
+          width: 100%;
+          gap: 8px;
+          font-size: 16px;
+
+          #required::after {
+            content: "*";
+            color: $vermelho;
+          }
+
+          input {
+            background-color: transparent;
+            border: 1px solid $borda-card;
+            width: 100%;
+            /* Mudado para 100% para ocupar toda a largura */
+            height: 1.8rem;
+            outline: none;
+            padding-left: 10px;
+            font-size: 16px;
+            box-sizing: border-box;
+            /* Garantir que padding e border estão dentro do cálculo do width */
+          }
+        }
+      }
+    }
+  }
+
+  .mesas {
+    display: grid;
+    gap: 32px;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(320px, 1fr));
+
+    @media (max-width: 1500px) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+
+      button#limparPedido {
+        background-color: $amarelo;
+        padding: 2px 12px;
+        font-size: 16px;
+      }
+    }
+
+    button#excluirPedido {
+      background-color: transparent;
+      font-weight: bold;
+      padding: 2px 12px;
+      font-size: 16px;
+
+      svg {
+        color: $vermelho;
+      }
+    }
+
+    div#tipoProduto {
+      font-size: 16px;
+      padding: 0;
+    }
+
+    &_mesa {
+      display: flex;
+      align-items: start;
+      justify-content: start;
+      flex-direction: column;
+      height: 300px;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+
+      &_pedido {
+        width: 100%;
+        height: 300px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          -webkit-border-radius: 10px;
+          border-radius: 10px;
+          background: $gradient_Cinza;
+          -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+        }
+
+        &_infos {
+          margin-right: 3px;
+          display: flex;
+          background-color: $borda-card;
+          align-items: start;
+          padding: 10px;
+          justify-content: center;
+          flex-direction: column;
+          margin-bottom: 12px;
+          border-radius: 4px;
+          border: 1px solid $cinza;
+        }
+      }
+    }
+
+  }
+
+  .filtro {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+    margin-bottom: 10px;
+
+
+    input {
+      background-color: transparent;
+      border: 1px solid $borda-card;
+      width: 100%;
+      /* O input vai ocupar 100% da largura disponível da .filtro */
+      height: 2.25rem;
+      outline: none;
+      padding-left: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    select {
+      background-color: transparent;
+      border: 1px solid $borda-card;
+      width: 20%;
+      /* Ajuste para o select também ocupar 100% da largura */
+      height: 1.8rem;
+      outline: none;
+      padding-left: 5px;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 1024px) {
+      select {
+        width: 55%;
+      }
+    }
+  }
+
+  .modalidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &__aluno {
+      flex: 1 1 calc(50% - 1rem);
+      /* 50% da largura, com gap ajustado */
+      text-align: left;
+      font-size: 1rem;
+
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    &__modalidade {
+      background-color: $cinza;
+      color: $amarelo;
+      padding: 10px;
+      border-radius: 4px;
+
+      &__content {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        // transform: scaleY(0);
+        transition: all 0.1s ease-in-out;
+        transform-origin: top;
+        color: $amarelo;
+
+        &.open {
+          max-height: 500px; // Defina um valor suficientemente grande para acomodar os elementos
+          opacity: 1;
+          // transform: scaleY(1); // Isso ajuda a fazer a transição de altura de forma mais suave
+          background-color: $branco;
+          padding: 12px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+
+          .status {
+            transition: all 0.1s ease-in-out;
+            padding: 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 5px 0;
+          }
+
+          .status.pago {
+            background-color: #4CAF50;
+            /* Verde */
+            transition: all 0.1s ease-in-out;
+            color: #333;
+          }
+
+          .status.pendente {
+            background-color: #FFC107;
+            /* Amarelo */
+            transition: all 0.1s ease-in-out;
+            color: #333;
+          }
+        }
+      }
+
+
+      &--title {
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        svg {
+          color: $amarelo;
+        }
+      }
+    }
+
+
+  }
+
+  .precoGeral {
+    margin: 16px 0px;
+  }
+
+  button.exportar {
+    background: $amarelo;
+    border: none;
+    border-radius: 28px;
+    padding: 8px;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 16px;
+    box-shadow: 1px 2px 3px 1px #00000049;
+  }
+}
+
+.erro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80vh;
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    h1 {
+      text-transform: uppercase;
+      font-size: 48px;
+    }
+
+    #erro404 {
+      color: $verde;
+    }
+  }
+
+  .return {
+    background-color: $verde;
+    border: 2px solid $verde;
+    border-radius: 28px;
+    padding: 6px 28px;
+    color: $branco;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+  }
+}
