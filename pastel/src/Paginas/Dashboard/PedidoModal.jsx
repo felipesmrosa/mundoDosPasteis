@@ -305,12 +305,6 @@ const PedidoModal = ({ mesa, onClose }) => {
       toast.error('Erro ao salvar o pedido');
     }
   };
-
-  console.log("Pedido: ", pedido);
-
-  console.log("TamanhoPizza: ", tamanhoPizza);
-  console.log("comboSelecionado: ", comboSelecionado);
-
   return (
     <div className="modal">
       <div className="modal__content">

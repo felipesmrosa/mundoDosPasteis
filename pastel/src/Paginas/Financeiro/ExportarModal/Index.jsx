@@ -19,7 +19,6 @@ const ExportarModal = ({ fecharModal }) => {
                 const alunoSnapshot = await getDocs(alunosRef);
 
                 if (alunoSnapshot.empty) {
-                    console.log("Nenhum aluno encontrado");
                     return;
                 }
 

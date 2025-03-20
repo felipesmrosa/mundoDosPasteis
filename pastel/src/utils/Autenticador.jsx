@@ -11,8 +11,6 @@ const AuthListener = () => {
       if (user) {
         // O usuário está autenticado, você pode fazer algo aqui se necessário
         // localStorage.setItem("emailAutenticado", user.email); // Salve o email no localStorage
-        console.log("Sexo");
-        
       } else {
         // O usuário não está autenticado
         // localStorage.removeItem("emailAutenticado"); // Remova o email do localStorage se necessário

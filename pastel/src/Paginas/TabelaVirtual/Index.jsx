@@ -22,7 +22,6 @@ export function TabelaVirtual() {
       try {
         const q = query(tabelaBD); // Consulta simples sem filtros
         const data = await getDocs(q);
-        console.log(data.docs); // Para verificar o que está sendo retornado
         const alunosData = data.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
