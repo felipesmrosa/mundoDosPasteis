@@ -131,6 +131,11 @@ export function Dashboard() {
     janelaImpressao.print();
   };
 
+  // Função chamada ao clicar no card da mesa
+  const handleCardClick = (mesa) => {
+    setMesaSelecionada(mesa); // Sempre abre o modal, independentemente de a mesa ser paga ou não
+  };
+
 
   return (
     <div className="fundoPadrao">
